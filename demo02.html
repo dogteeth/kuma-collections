@@ -4,6 +4,217 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(88, 86, 86);
+      }
+      .courses_content {
+        width: 80%;
+        margin: 2% auto 0 auto;
+      }
+
+      .categoryHeader {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: grey;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .categoryHeaderImg {
+        height: 50vh;
+      }
+
+      .categoryHeaderImg > Img {
+        width: 100%;
+        height: 100%;
+        object-position: top left;
+        object-fit: cover;
+        border: solid 5px red;
+      }
+
+      .categoryBody {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .course_container {
+        padding: 1rem;
+        width: 100%;
+        border-radius: 1rem 1rem 0rem 0rem;
+        background-color: rgb(104, 102, 102);
+      }
+      .course_container img {
+        width: 100%;
+        border-radius: 1rem 1rem 0rem 0rem;
+      }
+
+      .course_container h1 {
+        color: white;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="courses_content">
+      <!-- course Category 01 -->
+      <div class="course_category">
+        <div class="categoryHeader">
+          <div class="categoryHeaderImg">
+            <img src="kuma_01.png" alt="headerImg" />
+          </div>
+          <div class="categoryHeaderTitle"><h1>戰爭樣貎</h1></div>
+        </div>
+        <div class="categoryBody">
+          <!-- course 1 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2PMGQKXxP5JKcCbcaMQwWdiyQzt.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title"><h1>地表第一戰研所：戰略學</h1></div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+          <!-- course 2 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2OPNLjs2lnCG7pLhyiczWXcoLA3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title">
+                <h1>兵棋推演</h1>
+              </div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+          <!-- course 3 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2PAixpVp4fuCos2oyaL2uHQZ0kl.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title"><h1>瞭解中國</h1></div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- course Category 02 -->
+      <div class="course_category">
+        <div class="categoryHeader">
+          <img src="kuma_01.png" class="categoryHeaderImg" alt="headerImg" />
+          <h1>資訊作戰</h1>
+        </div>
+        <div class="categoryBody">
+          <!-- course 4 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2PAkCxPkJnmaHGwdb8IE4uJWmEK.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title">地表第一戰研所：戰略學</div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- course Category 03 -->
+      <div class="course_category">
+        <div class="categoryHeader">
+          <img src="kuma_01.png" class="categoryHeaderImg" alt="headerImg" />
+          <h1>衛生與基礎救護</h1>
+        </div>
+        <div class="categoryBody">
+          <!-- course 5 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2PM6pAq2EwIEmCh7h8VdgkgdeGJ.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title">地表第一戰研所：戰略學</div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+          <!-- course 6 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2PM6oSTlnZUIR9qUqlCKhLNU5TB.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title">地表第一戰研所：戰略學</div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- course Category 04 -->
+      <div class="course_category">
+        <div class="categoryHeader">
+          <img src="kuma_01.png" class="categoryHeaderImg" alt="headerImg" />
+          <h1>防災避難規劃</h1>
+        </div>
+        <div class="categoryBody">
+          <!-- course 7 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2PAlQEmb7WjfNvyUe1A3MpxWYIN.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title">地表第一戰研所：戰略學</div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+          <!-- course 8 -->
+          <div class="course_container">
+            <div class="course_img">
+              <img
+                src="https://static-assets.oen.tw/images/img-2PAn1GIOJTyEGU92iC7YoNuTQmH.jpg"
+                alt=""
+              />
+            </div>
+            <div class="course_details">
+              <div class="course_title">地表第一戰研所：戰略學</div>
+              <div class="course_location">台北</div>
+              <div class="course_listPrice">3200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

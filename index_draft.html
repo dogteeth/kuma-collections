@@ -1069,25 +1069,465 @@
         <!-- 集結頁開始 -->
 
         <!-- style sheet for 集結頁 -->
-        <link rel="stylesheet" href="./zCollection_01.css" />
+        <!-- <link rel="stylesheet" href="./zCollection_01.css" /> -->
+        <style>
+          .courses_collection {
+            background-color: grey;
+          }
+
+          .courses_collection > * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          /* 主視覺 */
+          .mainIntro {
+            padding-top: 1rem;
+            width: 80%;
+            margin: auto;
+            height: 80vh;
+          }
+
+          .mainIntroImgs {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 80vh;
+            gap: 0.8rem;
+            justify-content: center;
+          }
+
+          .mainImg {
+            overflow: hidden;
+            position: relative;
+            border: solid 0.5rem black;
+            border-radius: 1rem;
+            width: 25%;
+          }
+
+          .mainImg:hover {
+            box-shadow: 1px 10px 5px rgb(0, 0, 0, 0.5);
+          }
+
+          .mainImg > img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+          }
+
+          .mainImgText {
+            width: 0;
+            position: absolute;
+            color: white;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            background-color: rgba(128, 128, 128, 0.9);
+            border-radius: 1rem;
+            overflow: hidden;
+            opacity: 0;
+            box-shadow: 1px 10px 5px rgb(0, 0, 0, 0.8);
+          }
+
+          .mainImgText h2 {
+            font-size: 1em;
+            padding-top: 1rem;
+            white-space: nowrap;
+            text-align: center;
+          }
+          .mainImgText p {
+            text-align: justify;
+            padding: 1rem;
+            font-size: 0.8em;
+          }
+
+          /* 焦點課程 */
+          .focus_content {
+            width: 80%;
+            margin: auto;
+            margin-top: 5%;
+            border: solid 5px red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+          }
+          .focus_content .course_img {
+            flex: 0 0 65%;
+            padding-top: 1rem;
+          }
+          .focus_content img {
+            width: 100%;
+          }
+          .focus_content .course_details {
+            padding: 1rem;
+          }
+
+          .focus_tagline {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 0rem 1rem;
+            font-size: 1.2em;
+          }
+
+          /* 課程列表 */
+
+          .course_container {
+            display: flex;
+          }
+
+          .courses_content {
+            display: grid;
+            width: 80%;
+            margin: 2% auto 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding-bottom: 2%;
+          }
+
+          .courses_content .course_container {
+            padding: 1rem;
+            width: 100%;
+            border-radius: 1rem 1rem 0rem 0rem;
+            background-color: rgb(104, 102, 102);
+          }
+
+          .courses_content img {
+            width: 100%;
+            border-radius: 1rem 1rem 0rem 0rem;
+          }
+
+          .courses_content .course_details {
+            display: flex;
+            gap: 2%;
+          }
+
+          .courses_content h2 {
+            color: white;
+          }
+
+          .courses_content h3 {
+            color: rgb(237, 110, 110);
+          }
+        </style>
 
         <!-- html code for 集結頁 -->
+        <div class="courses_collection">
+          <div class="mainIntro">
+            <div class="mainIntroImgs">
+              <!-- 圖01 -->
+              <div class="mainImg expander">
+                <div class="mainImgText">
+                  <h2>戰爭樣貎</h2>
+                  <p>
+                    暸解現代戰事的形貎，了解戰爭實際上如何進行。降低未知及不測的恐懼，從而管控戰爭風險。<a
+                      href="#01"
+                      >相關課程</a
+                    >
+                  </p>
+                </div>
+                <img src="kuma_01.png" alt="" />
+              </div>
 
-        <div class="collectionContainer">
-          <div class="mainIntro"></div>
-          <div class="focusProduct"></div>
-          <div class="collectionProducts">
-            <section class="category cate_A"></section>
-            <section class="category cate_B"></section>
-            <section class="category cate_C"></section>
-            <section class="category cate_D"></section>
+              <!-- 圖02  -->
+              <div class="mainImg expander">
+                <div class="mainImgText">
+                  <h2>資訊作戰</h2>
+                  <p>
+                    平時建立資訊安全環境，從線上到線下瞭解資訊作戰模式，戰時透過公開情報蒐集，快速闢謠並提供我方有效情資。
+                  </p>
+                </div>
+                <img src="kuma_02.png" alt="" />
+              </div>
+
+              <!-- 圖03 -->
+              <div class="mainImg expander">
+                <div class="mainImgText">
+                  <h2>衛生與基礎救護</h2>
+                  <p>
+                    由個人自救出發，向互助救人發展。從災難時生理與心理健康為基䂾，擴展至創傷處置與脫離災難現場，並發展現場應變與交接能力。
+                  </p>
+                </div>
+                <img src="kuma_03.png" alt="" />
+              </div>
+
+              <!-- 圖04  -->
+              <div class="mainImg expander">
+                <div class="mainImgText">
+                  <h2>防災避難規劃</h2>
+                  <p>
+                    自身防衛開始，擴展到居家環境的固守，及移動避難時的規劃，準備與應變。
+                  </p>
+                </div>
+                <img src="kuma_04.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="focus_content">
+            <!-- course 1 -->
+            <div class="course_container">
+              <div class="course_img">
+                <img
+                  src="https://static-assets.oen.tw/images/img-2PMGQKXxP5JKcCbcaMQwWdiyQzt.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="course_details">
+                <div class="focus_tagline">最新開課</div>
+                <div class="course_title"><h2>地表第一戰研所：戰略學</h2></div>
+                <div class="course_listPrice">
+                  <h3>$3200</h3>
+                </div>
+                <div class="course_address">
+                  <h3>@台北</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="courses_content">
+            <!-- category 01 -->
+            <div class="course_Category">
+              <div class="category_Header" id="01">
+                <div class="categoryHeaderImg">
+                  <img src="kuma_01.png" alt="headerImg" />
+                </div>
+                <div class="categoryHeaderTitle">
+                  <h1>戰爭樣貎</h1>
+                  <h4>
+                    暸解現代戰事的形貎，了解戰爭實際上如何進行。降低未知及不測的恐懼，從而管控戰爭風險。
+                  </h4>
+                </div>
+              </div>
+              <div class="category_body">
+                <!-- course 1 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2PMGQKXxP5JKcCbcaMQwWdiyQzt.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title">
+                      <h2>地表第一戰研所：戰略學</h2>
+                    </div>
+                    <div class="course_listPrice">
+                      <h3>$3200</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- course 2 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2OPNLjs2lnCG7pLhyiczWXcoLA3.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title">
+                      <h2>兵棋推演</h2>
+                    </div>
+                    <div class="course_listPrice">
+                      <h3>$3600</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- course 3 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2PAixpVp4fuCos2oyaL2uHQZ0kl.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title"><h2>瞭解中國</h2></div>
+                    <div class="course_listPrice"><h3>$600</h3></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- category 02 -->
+            <div class="course_Category">
+              <div class="category_Header">
+                <div class="categoryHeaderImg">
+                  <img src="kuma_02.png" alt="headerImg" />
+                </div>
+                <div class="categoryHeaderTitle">
+                  <h1>資訊作戰</h1>
+                  <h4>
+                    平時建立資訊安全環境，從線上到線下瞭解資訊作戰模式，戰時透過公開情報蒐集，快速闢謠並提供我方有效情資。
+                  </h4>
+                </div>
+              </div>
+              <div class="category_body">
+                <!-- course 4 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2PAkCxPkJnmaHGwdb8IE4uJWmEK.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title"><h2>第五縱隊識別</h2></div>
+                    <div class="course_listPrice">
+                      <h3>$9999</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- category 03 -->
+            <div class="course_Category">
+              <div class="category_Header">
+                <div class="categoryHeaderImg">
+                  <img src="kuma_03.png" alt="headerImg" />
+                </div>
+                <div class="categoryHeaderTitle">
+                  <h1>衛生與基礎救護</h1>
+                  <h4>
+                    由個人自救出發，向互助救人發展。從災難時生理與心理健康為基䂾，擴展至創傷處置與脫離災難現場，並發展現場應變與交接能力。
+                  </h4>
+                </div>
+              </div>
+              <div class="category_body">
+                <!-- course 5 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2PM6pAq2EwIEmCh7h8VdgkgdeGJ.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title">
+                      <h2>當災難來臨：尋找自癒力</h2>
+                    </div>
+                    <div class="course_listPrice">
+                      <h3>$600</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- course 6 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2PM6oSTlnZUIR9qUqlCKhLNU5TB.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title">
+                      <h2>救難專家教你 我要活下去</h2>
+                    </div>
+                    <div class="course_listPrice">
+                      <h3>$600</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- category 04 -->
+            <div class="course_Category">
+              <div class="category_Header">
+                <div class="categoryHeaderImg">
+                  <img src="kuma_04.png" alt="headerImg" />
+                </div>
+                <div class="categoryHeaderTitle">
+                  <h1>防災避難規劃</h1>
+                  <h4>
+                    自身防衛開始，擴展到居家環境的固守，及移動避難時的規劃，準備與應變。
+                  </h4>
+                </div>
+              </div>
+              <div class="category_body">
+                <!-- course 7 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2PAlQEmb7WjfNvyUe1A3MpxWYIN.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title">
+                      <h2>自主訓練：新手的三堂體能課</h2>
+                    </div>
+                    <div class="course_listPrice">
+                      <h3>$3000</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- course 8 -->
+                <div class="course_container">
+                  <div class="course_img">
+                    <img
+                      src="https://static-assets.oen.tw/images/img-2PAn1GIOJTyEGU92iC7YoNuTQmH.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="course_details">
+                    <div class="course_title">
+                      <h2>食用植物種植</h2>
+                    </div>
+                    <div class="course_listPrice">
+                      <h3>$1800</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
         <!-- js data for 集結頁 -->
-        <script src="./collectionsData.js" type="module"></script>
-        <script src="./collectionsDataImport.js" type="module"></script>
+        <!-- <script src="./collectionsData.js" type="module"></script>
+        <script src="./collectionsDataImport.js" type="module"></script> -->
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script>
+          let expanders = gsap.utils.toArray(".expander");
+
+          let active; // keep track of which expander is open
+          expanders.forEach(function (expander, index) {
+            // let close = expander.querySelector(".close");
+            //create animation for each expander
+            let animation = gsap.timeline({ paused: true });
+
+            let mainText = expander.querySelector(".mainImgText");
+
+            animation
+              .to(expander, { width: 1000, duration: 0.1 })
+              .to(mainText, { width: "95%", opacity: "1", duration: 0.2 });
+
+            // animation.from(
+            //   close,
+            //   { opacity: 0, duration: 0.1, scale: 0.4, x: "-=10" },
+            //   "-=0.1"
+            // );
+            //apply the timeline animation to an animation property on the expander
+            expander.animation = animation;
+            expander.addEventListener("click", function () {
+              if (active) {
+                //close the active expander if there is one by reversing it
+
+                active.animation.reverse();
+              }
+              expander.animation.play(); // play the animation of the element you clicked on (this opens it)
+              active = expander; // keep track of which expander is open
+            });
+            //close this expander when you click the close button by reversing the animation
+            expander.addEventListener("mouseleave", function (event) {
+              event.stopPropagation();
+              expander.animation.reverse();
+            });
+          });
+        </script>
         <!-- 集結頁結束 -->
 
         <script

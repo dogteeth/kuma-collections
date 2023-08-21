@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .expander {
+        width: 50px;
+        height: 40vh;
+        border-radius: 25px;
+        background: black;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+      }
+
+      .wrapper {
+        height: 100%;
+        width: 100%;
+        background: #1d1d1d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: rows;
+      }
+
+      .close {
+        /* font-family: sans-serif;
+        font-size: 18px;
+        line-height: 40px;
+        transform: translate(155px, 5px);
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 20px;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 1px 1px 4px #333; */
+      }
+
+      h1 {
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        font-family: Kanit, sans-serif;
+        font-weight: 400;
+        color: #ededed;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Click Any Pill to Expand</h1>
+    <div class="wrapper">
+      <div class="expander">
+        <!-- <div class="close">X</div> -->
+      </div>
+      <div class="expander">
+        <!-- <div class="close">X</div> -->
+      </div>
+      <div class="expander">
+        <!-- <div class="close">X</div> -->
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+      let expanders = gsap.utils.toArray(".expander");
+      let active; // keep track of which expander is open
+      expanders.forEach(function (expander, index) {
+        // let close = expander.querySelector(".close");
+        //create animation for each expander
+        let animation = gsap.timeline({ paused: true });
+        animation.to(expander, { width: 500, duration: 0.4 });
+        // animation.from(
+        //   close,
+        //   { opacity: 0, duration: 0.1, scale: 0.4, x: "-=10" },
+        //   "-=0.1"
+        // );
+        //apply the timeline animation to an animation property on the expander
+        expander.animation = animation;
+        expander.addEventListener("mouseover", function () {
+          if (active) {
+            //close the active expander if there is one by reversing it
+            active.animation.reverse();
+          }
+          expander.animation.play(); // play the animation of the element you clicked on (this opens it)
+          active = expander; // keep track of which expander is open
+        });
+        //close this expander when you click the close button by reversing the animation
+        expander.addEventListener("mouseleave", function (event) {
+          event.stopPropagation();
+          expander.animation.reverse();
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+    https://greensock.com/forums/topic/26841-hover-multiple-elements-mouseenter-changes-width-and-moves-other-elements/
+ -->

@@ -79,7 +79,7 @@ export const courseData =
     },
     {
       serial_no: "course_006",
-      title: "救﻿難專家教你 我要活下去",
+      title: "救難專家教你 我要活下去",
       category: "C",
       location: "台北",
       list_price: 600,
